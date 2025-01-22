@@ -1,0 +1,33 @@
+{
+  "name": "bp_vision_playwright",
+  "version": "1.0.0",
+  "scripts": {
+    "app:regression": "cross-env ENV=CANARY TEST_TYPE=app npx bddgen && cross-env ENV=CANARY TEST_TYPE=app WORKERS=5 npx playwright test",
+    "app:chrome:smoke": "cross-env ENV=CANARY TEST_TYPE=app npx bddgen && cross-env ENV=CANARY TEST_TYPE=app WORKERS=1 npx playwright test --grep @sanity --project=chromium",
+    "app:canary:smoke": "cross-env ENV=CANARY TEST_TYPE=app npx bddgen && cross-env ENV=CANARY TEST_TYPE=app WORKERS=1 npx playwright test --grep @sanity --project=chrome",
+    "dev:component": "cross-env ENV=DEV TEST_TYPE=storybook npx bddgen && cross-env ENV=DEV TEST_TYPE=storybook WORKERS=1 npx playwright test --grep @button --project=firefox",
+    "app:canary:legal": "cross-env ENV=CANARY TEST_TYPE=app npx bddgen --config pwplaywright.config.ts && cross-env ENV=CANARY TEST_TYPE=app WORKERS=4 npx playwright test --config pwplaywright.config.ts --grep @legal --project=chrome",
+    "test:component": "cross-env ENV=DEV TEST_TYPE=app npx bddgen && cross-env ENV=DEV TEST_TYPE=app WORKERS=5 npx playwright test",
+    "accessibility:check": "cross-env ENV=CANARY TEST_TYPE=storybook npx bddgen && cross-env ENV=CANARY TEST_TYPE=storybook WORKERS=1 npx playwright test --grep '@accessibility' --project=chrome",
+    "generate-report": "ts-node utils/report-history.ts && allure generate ./allure-results --clean",
+    "open-report": "allure open ./allure-report"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.1",
+    "@playwright/test": "^1.49.1",
+    "@types/fs-extra": "^11.0.4",
+    "@types/node": "^22.9.0",
+    "allure-playwright": "^3.0.9",
+    "cross-env": "^7.0.3",
+    "playwright-bdd": "^7.5.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  },
+  "dependencies": {
+    "axe-core": "^4.10.2",
+    "dotenv": "^16.4.6",
+    "fs-extra": "^11.3.0"
+  }
+}

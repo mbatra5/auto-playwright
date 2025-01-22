@@ -1,0 +1,14 @@
+{
+    "compilerOptions": {
+      "target": "es2021",
+      "module": "Node16",
+      "strict": true,
+      "noEmit": true,
+      "useUnknownInCatchVariables": false,
+      "forceConsistentCasingInFileNames": true,
+      "moduleResolution": "Node16",
+      "resolveJsonModule": true,
+      "esModuleInterop": true
+    },
+    "include": ["**/*.ts"]
+  }
