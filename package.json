@@ -8,7 +8,9 @@
     "dev:component": "cross-env ENV=DEV TEST_TYPE=storybook npx bddgen && cross-env ENV=DEV TEST_TYPE=storybook WORKERS=1 npx playwright test --grep @button --project=firefox",
     "app:canary:legal": "cross-env ENV=CANARY TEST_TYPE=app npx bddgen --config pwplaywright.config.ts && cross-env ENV=CANARY TEST_TYPE=app WORKERS=4 npx playwright test --config pwplaywright.config.ts --grep @legal --project=chrome",
     "test:component": "cross-env ENV=DEV TEST_TYPE=app npx bddgen && cross-env ENV=DEV TEST_TYPE=app WORKERS=5 npx playwright test",
-    "accessibility:check": "cross-env ENV=CANARY TEST_TYPE=storybook npx bddgen && cross-env ENV=CANARY TEST_TYPE=storybook WORKERS=1 npx playwright test --grep '@accessibility' --project=chrome",
+    "accessibility:check": "cross-env ENV=CANARY TEST_TYPE=storybook npx bddgen && cross-env ENV=CANARY TEST_TYPE=storybook WORKERS=1 npx playwright test --grep '@accessibility' --project=chrome" ,
+    "accessibility:check:ui": "cross-env ENV=CANARY TEST_TYPE=storybook npx bddgen && cross-env ENV=CANARY TEST_TYPE=storybook WORKERS=1 npx playwright test --grep '@accessibility' --project=chrome --ui",
+    "accessibility:check:debug": "cross-env ENV=CANARY TEST_TYPE=storybook npx bddgen && cross-env ENV=CANARY TEST_TYPE=storybook WORKERS=1 npx playwright test --grep '@accessibility' --project=chrome --debug",
     "generate-report": "ts-node utils/report-history.ts && allure generate ./allure-results --clean",
     "open-report": "allure open ./allure-report"
   },

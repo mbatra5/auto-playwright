@@ -23,6 +23,6 @@ When('I allow cookie and check for violations', async function () {
  await button.cookiesAllowButton.click();
 
 const results = await axeTestInstance.checkAAAGuidelines(); 
-expect(results.violations).toHaveLength(1); //Assert the no. of violations
-//expect(results.violations).toEqual([]);
+//expect(results1.violations).toHaveLength(3); //Assert the no. of violations
+expect(results1.violations).toEqual([]);
 });

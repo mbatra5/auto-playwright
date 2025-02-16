@@ -4,16 +4,15 @@
 
 1. Clone repo
    ```
-   git clone git@ssh.dev.azure.com:v3/bp-digital/FNC-AECF-AE_Group_Tech_and_Corporate_Functions/nvp-site-generator
  
    ```
 2. CD into directory
    ```
-   cd qa_automation
+   cd qadir
 
 3. Install dependencies
 
-   Go to /qa_automation folder. Open command line and navigate to the qa_automation, and run the following command:
+   Go to /dir folder. Open command line and navigate to the folder, and run the following command:
 
    ```
    npm install
@@ -45,7 +44,7 @@
    npx playwright show-report
    ```
 
-   Run this command or alternatively go to the playwright-report folder inside /qa_automation
+   Run this command or alternatively go to the playwright-report folder inside /dir
 
 8. Check out the allure report
 
@@ -76,7 +75,7 @@ After cloning this repository this is the file structure :
     |       |   └── test-data  
     |       |        ├──pageURL.json
     │       │      
-    │       └── storybook/
+    │       └── test/
     │           └── components/
     │               ├── card/
     │               │   ├── card.feature
